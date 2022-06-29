@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sedes - Localidades</title>
-</head>
-<body>
-    <h2>En las siguientes localidades podrás encontrar nuestros <br>
-    centros deportivos:</h2>
+{% extends PrimerProyecto\AppCoder\templates\AppCoder\index.html %}
 
-    {% for Sedes in sedes %}
-        <li>Localidad: {{Sedes.localidad}}, Direccion: {{Sedes.direccion}}, Provincia: {{Sedes.provincia}} {{Sedes.dia_y_horario}}</li>
-    {% endfor %}
-</body>
-</hl2
+{% block referencia %}
+        <title>Sedes - Localidades</title>
+        </head>
+        
+        <body>
+            <h2>En las siguientes localidades podrás encontrar nuestros <br>
+                centros deportivos:</h2>
+        
+            {% for Sedes in sedes %}
+            <li>Localidad: {{Sedes.localidad}}, Direccion: {{Sedes.direccion}}, Provincia: {{Sedes.provincia}}
+                {{Sedes.dia_y_horario}}</li>
+            {% endfor %}
+        </body>
+{% endblock %}
 

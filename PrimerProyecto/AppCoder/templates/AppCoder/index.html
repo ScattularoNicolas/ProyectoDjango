@@ -1,13 +1,39 @@
-<<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
- 
-    </head>
-    <body>
+{% load static %}
 
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Scrolling Nav - Start Bootstrap Template</title>
+
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav>
+        Inicio
+        <ul>
+            <li>
+                <a href="{% url 'disciplinasDeportivas' %}">Disciplinas Deportivas</a>
+            </li>
+            <li>
+                <a href="{% url 'profesores' %}">Profesores</a>
+            </li>
+            <li>
+                <a href="{% url 'alumnos' %}">Alumnos</a>
+            </li>
+            <li>
+                <a href="{% url 'sedes' %}">Sedes</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    {% block referencia %}
+
+    {% endblock %}
+
+</body>
 </html>

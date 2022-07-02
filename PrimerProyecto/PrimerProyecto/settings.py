@@ -56,7 +56,7 @@ ROOT_URLCONF = 'PrimerProyecto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'AppCoder'/'templates'/'AppCoder'],
+        'DIRS': [BASE_DIR/'PrimerProyecto'/'AppCoder'/'templates'/'AppCoder'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +120,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'statis'),
+    os.path.join(BASE_DIR, 'static'),
     )
 
 # Default primary key field type

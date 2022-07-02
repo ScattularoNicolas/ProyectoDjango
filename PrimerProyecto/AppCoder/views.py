@@ -20,4 +20,8 @@ def alumnos (request):
 def sedes (request):
     sede = Sedes.objects.all()
     return render(request, "AppCoder/sedes.html", {"sede":sede})
+
+def base(request):
+    
+    return render(request, "AppCoder/base.html, {}")
     

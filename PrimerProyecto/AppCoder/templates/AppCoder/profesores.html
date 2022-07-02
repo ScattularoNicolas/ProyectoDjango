@@ -1,12 +1,11 @@
-{% extends 'index.html' %}
+{% extends 'AppCoder/base.html' %}
+{% load static %}
 
-{% block referencia %}
+{% block tituloPagina %}
+Profesores - AppCoder
+{% endblock %}
 
-    <h1>Profesores de cada deporte:</h1>
-    <ul>
-        {% for Profesores in profesor%}
-        <li>{{Profesores.nombre}} {{Profesores.apellido}} : {{Profesores.deporte}}</li>
-        {% endfor%}
-    </ul>
+{% block contenidoPagina %}
+
 
 {% endblock %}

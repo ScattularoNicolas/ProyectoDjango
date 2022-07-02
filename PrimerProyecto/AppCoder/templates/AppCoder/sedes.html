@@ -1,17 +1,11 @@
-{% extends 'index.html' %}
+{% extends 'AppCoder/base.html' %}
+{% load static %}
 
-{% block referencia %}
-        <title>Sedes - Localidades</title>
-        </head>
-        
-        <body>
-            <h2>En las siguientes localidades podrás encontrar nuestros <br>
-                centros deportivos:</h2>
-        
-            {% for Sedes in sedes %}
-            <li>Localidad: {{Sedes.localidad}}, Direccion: {{Sedes.direccion}}, Provincia: {{Sedes.provincia}}
-                {{Sedes.dia_y_horario}}</li>
-            {% endfor %}
-        </body>
+{% block tituloPagina %}
+Sedes - AppCoder
 {% endblock %}
 
+{% block contenidoPagina %}
+
+
+{% endblock %}

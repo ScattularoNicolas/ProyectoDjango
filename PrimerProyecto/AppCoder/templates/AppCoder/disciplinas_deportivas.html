@@ -1,19 +1,10 @@
-{% extends 'index.html' %}
+{% extends 'AppCoder/base.html' %}
+{% load static %}
 
-{% block referencia %}
-
-    
-
+{% block tituloPagina %}
+Disciplinas Deportivas - AppCoder
 {% endblock %}
 
-    <h1>Centro Recreativo Deportivo</h1>
-    
-    <h3>Estos son los diferentes deportes que encontrarás en nuestras distintas sedes: </h3>
-    {% for deporte in deportes %}
-    <ul>
-        <li>{{deporte.nombre}} {{deporte.precio}}</li>
-    </ul>
-    {% endfor% }
+{% block contenidoPagina %}
 
 {% endblock %}
-

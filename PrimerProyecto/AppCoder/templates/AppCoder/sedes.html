@@ -7,5 +7,11 @@ Sedes - AppCoder
 
 {% block contenidoPagina %}
 
+    <section class="row gx-4 justify-content-center">
+        Nuestras sedes son:
+        {% for sede in sedes %}
+        <li>{{sede.localidad}} {{sede.direccion}}</li>
+        {% endfor %}
+    </section>
 
 {% endblock %}

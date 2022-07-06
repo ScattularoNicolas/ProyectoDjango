@@ -29,11 +29,15 @@ def base(request):
 def inscripcion_deporte(request):
     
     if request.method == "POST":
-        info_formulario = request.POST
-        disciplinasDeportivas = DisiplinasDeportivas(nombre = info_formulario["nombre"], precio = int (info_formulario["precio"]))
-        disciplinasDeportivas.save()
+        formulario = NuevoDeporte(request.POST)
         
-        return render(request, "AppCoder/inscripcion_deporte.html", {} )
+        if formulario.is_valid():
+            info_deporte = formulario.cleaned_data
+            disciplinasDeportivas = DisiplinasDeportivas(nombre = info_deporte["nombre"], precio = int (info_deporte["precio"]))
+            disciplinasDeportivas.save()
+            return redirect("disciplinas_deportivas")
+        else:
+            redirect("disciplinas_deportivas")
     #Método GET
     else:
         formularioVacio = NuevoDeporte()

@@ -26,4 +26,14 @@ def base(request):
     return render(request, "AppCoder/base.html, {}")
     
 def inscripcion_deporte(request):
-    return render(request, "AppCoder/inscripcion_deporte.html", {} )
+    
+    if request.method == "POST":
+        info_formulario = request.POST
+        disciplinasDeportivas = DisiplinasDeportivas(request.POST["nombre"], request.POST["precio"])
+        disciplinasDeportivas.save()
+        
+        return render(request, "AppCoder/inscripcion_deporte.html", {} )
+    
+    else:
+        return render(request, "AppCoder/inscripcion_deporte.html", {} )
+    

@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 
-def index(request):
-    return HttpResponse("Funciona")
+#def index(request):
+    #return HttpResponse("Funciona")
 
 def disciplinasDeportivas(request):
     deportes = DisiplinasDeportivas.objects.all()
@@ -25,3 +25,5 @@ def base(request):
     
     return render(request, "AppCoder/base.html, {}")
     
+def inscripcion_deporte(request):
+    return render(request, "AppCoder/inscripcion_deporte.html", {} )

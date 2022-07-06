@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import *
+from .forms import NuevoDeporte
 
 #def index(request):
     #return HttpResponse("Funciona")
@@ -29,11 +30,12 @@ def inscripcion_deporte(request):
     
     if request.method == "POST":
         info_formulario = request.POST
-        disciplinasDeportivas = DisiplinasDeportivas(request.POST["nombre"], request.POST["precio"])
+        disciplinasDeportivas = DisiplinasDeportivas(nombre = info_formulario["nombre"], precio = int (info_formulario["precio"]))
         disciplinasDeportivas.save()
         
         return render(request, "AppCoder/inscripcion_deporte.html", {} )
-    
+    #Método GET
     else:
-        return render(request, "AppCoder/inscripcion_deporte.html", {} )
+        formularioVacio = NuevoDeporte()
+        return render(request, "AppCoder/inscripcion_deporte.html", {"form":formularioVacio} )
     

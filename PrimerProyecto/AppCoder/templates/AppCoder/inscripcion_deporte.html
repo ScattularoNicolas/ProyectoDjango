@@ -12,11 +12,11 @@ Insripción - AppCoder
 <form action="" method="post">
     {% csrf_token %}
 
-    <p>Deporte: <input type="text" name="deporte" id=""></p>
+    <!-- <p>Deporte: <input type="text" name="deporte" id=""></p>
+    <p>Precio: <input type="number" name="precio" id="" min="0"></p>-->
+    {{ form.as_p }}
 
-    <p>Horario: <input type="number" name="horario" id="" min="0" max="24"></p>
-
-    <input type="submit" value="Inscribir">
+    <input type="submit" value="Inscribir"> 
 </form>
 
 {% endblock %}

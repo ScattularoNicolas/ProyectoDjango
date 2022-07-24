@@ -18,10 +18,6 @@ def alumnos (request):
     alumno = Alumnos.objects.all()
     return render(request, "AppCoder/alumnos.html", {"alumno":alumno})
 
-def sedes (request):
-    sede = Sedes.objects.all()
-    return render(request, "AppCoder/sedes.html", {"sede":sede})
-
 def base(request):
     
     return render(request, "AppCoder/base.html, {}")
@@ -43,3 +39,13 @@ def inscripcion_deporte(request):
         formularioVacio = NuevoDeporte()
         return render(request, "AppCoder/inscripcion_deporte.html", {"form":formularioVacio} )
     
+    
+def busqueda_deporte(request):
+    
+    if request.method == "POST":
+        deporte = request.POST["deporte"]
+        deportes = DisiplinasDeportivas.objects.filter(deporte_icontains=deporte)
+
+    else:   #Get
+        deportes = []
+        return render(request, "AppCoder/busqueda_deporte.html", {"deportes":deportes})

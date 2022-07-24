@@ -26,4 +26,3 @@ class SedesAdmin(admin.ModelAdmin):
 admin.site.register(DisiplinasDeportivas, DisiplinasDeportivasAdmin)
 admin.site.register(Profesores, ProfesoresAdmin)
 admin.site.register(Alumnos, AlumnosAdmin)
-admin.site.register(Sedes, SedesAdmin)
